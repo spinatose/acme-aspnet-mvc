@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization; // 👈 new code
 
 namespace acme.Controllers;
 
@@ -10,6 +11,7 @@ public class CatalogController : Controller {
         _logger = logger;
     }
 
+    [Authorize] // 👈 new code
     public IActionResult Index()
     {
         return View();
